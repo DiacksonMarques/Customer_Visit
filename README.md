@@ -29,7 +29,7 @@
   <br><br>
 
 <p align="center">
-  <img alt="App home" src="src/assets/sisttem.jpg"/>
+  <img alt="App home" src="src/assets/sisttem.JPG"/>
 </p>
 
 <br>
