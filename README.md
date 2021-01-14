@@ -79,5 +79,4 @@ Este projeto está sob a licença do MIT. Verifique [LICENSE] (LICENSE.md) para 
 
 Feito por Francisco Diackson 👋 <br>
 🔗 [Linkedin](https://www.linkedin.com/in/diackson-marques/) <br>
-✉ [sergio.deusdedith@gmail.com](mailto:diackson123@gmail.com) &nbsp; <br>
->>>>>>> 3a052aedbd4aa9963703bb2a770e661ffae59a11
+✉ [diackson123@gmail.com](mailto:diackson123@gmail.com) &nbsp; <br>
