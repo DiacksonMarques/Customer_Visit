@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Oque deseja?</h1>
+<div mat-dialog-content>
+    <p>{{ message }}</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button class="mat-button" (click)="onNoClick()">Não</button>
+    <button mat-raised-button class="mat-raised-button" cdkFocusInitial (click)="onSubmitClick()">Sim</button>
+</div>

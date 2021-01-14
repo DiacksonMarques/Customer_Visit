@@ -1,0 +1,93 @@
+<div class="margin">
+    <form novalidate [formGroup]="form">
+        <h1>Dados Visita</h1>
+        <mat-grid-list cols="2" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Codigo do cliente</mat-label>
+                    <input matInput formControlName="id_client" required>
+                    <mat-error *ngIf="hasError('id_client') && hasError('id_client')['required']">
+                        Por favor informe um código válido
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome do cliente</mat-label>
+                    <input matInput formControlName="name_client" required>
+                    <mat-error *ngIf="hasError('name_client') && hasError('name_client')['required']">
+                        Por favor informe um código válido
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="3" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field color="primary" appearance="outline">
+                    <mat-label>Data</mat-label>
+                    <input matInput formControlName="date" [matDatepicker]="picker2">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Hora</mat-label>
+                    <input matInput formControlName="hour" required>
+                    <mat-error *ngIf="hasError('hour') && hasError('hour')['required']">
+                        Por favor preencha o campo
+                    </mat-error>
+                    <mat-error *ngIf="hasError('hour') && hasError('hour')['minlength']">
+                        Quantidade de caracteres insuficiente
+                    </mat-error>
+                    <mat-error *ngIf="hasError('hour') && hasError('hour')['maxlength']">
+                        Quantidade de caracteres exedida
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Status da visita</mat-label>
+                    <mat-select formControlName="visit_status" required>
+                        <mat-option>--</mat-option>
+                        <mat-option value="Cadastrada">Cadastrada</mat-option>
+                        <mat-option value="Confirmada">Confirmada</mat-option>
+                        <mat-option value="Em atendimento">Em atendimento</mat-option>
+                        <mat-option value="Realizada">Realizada</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="hasError('visit_status') && hasError('visit_status')['required']">
+                        Por favor informe o status da visita
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-form-field appearance="outline">
+            <mat-label>Razão do cliente</mat-label>
+            <input matInput formControlName="reason_client" required>
+            <mat-error *ngIf="hasError('reason_client') && hasError('reason_client')['required']">
+                Por favor preencha o campo
+            </mat-error>
+            <mat-error *ngIf="hasError('reason_client') && hasError('reason_client')['minlength']">
+                Quantidade de caracteres insuficiente
+            </mat-error>
+            <mat-error *ngIf="hasError('reason_client') && hasError('reason_client')['maxlength']">
+                Quantidade de caracteres exedida
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Resultado da Visita</mat-label>
+            <input matInput formControlName="visit_result" required>
+            <mat-error *ngIf="hasError('visit_result') && hasError('visit_result')['required']">
+                Por favor preencha o campo
+            </mat-error>
+            <mat-error *ngIf="hasError('visit_result') && hasError('visit_result')['minlength']">
+                Quantidade de caracteres insuficiente
+            </mat-error>
+            <mat-error *ngIf="hasError('visit_result') && hasError('visit_result')['maxlength']">
+                Quantidade de caracteres exedida
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+        <button mat-raised-button color="warn">Cancelar</button>
+    </form>
+</div>

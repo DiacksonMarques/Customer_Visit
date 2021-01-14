@@ -1,0 +1,38 @@
+<div class="margin">
+  <form novalidate>
+    <h1>Dados Visita</h1>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome do cliente</mat-label>
+      <input matInput disabled value={{visit.name_client}}>
+    </mat-form-field>
+    <mat-grid-list cols="3" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Data</mat-label>
+          <input matInput disabled value={{visit.date}}>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Hora</mat-label>
+          <input matInput disabled value={{visit.hour}}>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Status da visita</mat-label>
+          <input matInput disabled value={{visit.visit_status}}>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-form-field appearance="outline">
+      <mat-label>Razão do cliente</mat-label>
+      <input matInput disabled value={{visit.reason_client}}>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Resultado da Visita</mat-label>
+      <input matInput disabled value={{visit.visit_result}}>
+    </mat-form-field>
+    <button mat-raised-button color="warn" (click)=" onVolt()">Voltar</button>
+  </form>
+</div>

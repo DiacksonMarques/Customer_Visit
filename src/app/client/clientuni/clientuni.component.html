@@ -1,0 +1,87 @@
+<div class="margin">
+  <form novalidate>
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <h1>Dados Pessoais</h1>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput disabled value={{client.name}}>
+    </mat-form-field>
+    <mat-grid-list cols="3" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Telefone</mat-label>
+          <input matInput disabled value={{phone_exi}}>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo de Cliente</mat-label>
+          <input matInput disabled value={{client_type}}>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Preferencial</mat-label>
+          <input matInput disabled value={{preferential}}>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <h1>Pessoa de contato</h1>
+    <mat-grid-list cols="2" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input matInput disabled value={{client.person.person_name}}>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Telefone</mat-label>
+          <input matInput disabled value={{person_phone}}>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <h1>Endreço</h1>
+    <mat-grid-list cols="3" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>CEP</mat-label>
+          <input matInput disabled value={{client.address.cep}}>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Número</mat-label>
+          <input matInput disabled value={{client.address.number}}>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Complemento</mat-label>
+          <input matInput disabled value={{client.address.complement}}>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-form-field appearance="outline">
+      <mat-label>Rua</mat-label>
+      <input matInput disabled value={{client.address.street}}>
+    </mat-form-field>
+    <mat-grid-list cols="2" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Bairro</mat-label>
+          <input matInput disabled value={{client.address.neighborhood}}>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Bairro</mat-label>
+          <input matInput disabled value={{client.address.state}}>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <button mat-raised-button color="warn" (click)="onVolt()">Voltar</button>
+  </form>
+</div>

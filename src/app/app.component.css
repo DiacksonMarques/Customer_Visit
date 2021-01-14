@@ -1,0 +1,48 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.header{
+  max-width: 1200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 1% auto;
+}
+.mat-toolbar{
+  height: 300px;
+
+  background-color:#223786 ;
+  color: #fffff9;
+}
+@media(max-width: 956px){
+  .mat-toolbar{
+    height: 150px;
+
+    background-color:#223786 ;
+    color: #fffff9;
+  }
+
+  .max-img{
+    height: 50%;
+    width: 50%;
+  }
+}
+.mat-button{
+  font-size: 1rem;
+  font-weight: 600;
+  transition: ease 0.25s;
+}
+
+.mat-button:hover{
+  border-bottom: solid 3px;
+  color: #E5E5E5;
+}
+.body{
+  max-width: 1200px;
+
+  background-color: #E5E5E5;
+}
+

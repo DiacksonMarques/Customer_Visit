@@ -1,0 +1,175 @@
+<div class="margin">
+    <h1>{{type_message}}</h1>
+    <hr>
+    <form novalidate [formGroup]="form">
+        <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+        <h1>Dados Pessoais</h1>
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name" placeholder="Maria Julia" required>
+            <mat-error *ngIf="hasError('name') && hasError('name')['required']">
+                Por favor informe um nome
+            </mat-error>
+            <mat-error *ngIf="hasError('name') && hasError('name')['minlength']">
+                Por favor informe um nome com mais de 5 caracteres
+            </mat-error>
+            <mat-error *ngIf="hasError('name') && hasError('name')['maxlength']">
+                Por favor informe um nome com menos caracteres
+            </mat-error>
+        </mat-form-field>
+        <mat-grid-list cols="3" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Telefone</mat-label>
+                    <example-tel-input placeholder="88-98809-4979" formControlName="phone"></example-tel-input>
+                    <mat-hint>Digitar somente números e o DDD</mat-hint>
+                    <mat-error *ngIf="hasError('phone') && hasError('phone')['required']">
+                        Por favor informe um telefone válido
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Tipo de Cliente</mat-label>
+                    <mat-select formControlName="type_client" required>
+                        <mat-option>--</mat-option>
+                        <mat-option value="Físico">Físico</mat-option>
+                        <mat-option value="Jurídico">Jurídico</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="hasError('type_client') && hasError('type_client')['required']">
+                        Por favor informe qual tipo do cliente
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Preferencial</mat-label>
+                    <mat-select formControlName="preferential" required>
+                        <mat-option>--</mat-option>
+                        <mat-option value="Sim">Sim</mat-option>
+                        <mat-option value="Não">Não</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="hasError('preferential') && hasError('preferential')['required']">
+                        Por favor informe se o cliente e preferencial
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+        <div formGroupName="person">
+            <h1>Pessoa de contato</h1>
+            <mat-grid-list cols="2" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nome</mat-label>
+                        <input matInput formControlName="person_name" placeholder="Julio Mario" required>
+                        <mat-error *ngIf="hasError('person_name') && hasError('person_name')['required']">
+                            Por favor informe um nome
+                        </mat-error>
+                        <mat-error *ngIf="hasError('person_name') && hasError('person_name')['minlength']">
+                            Por favor informe um nome com mais de 5 caracteres
+                        </mat-error>
+                        <mat-error *ngIf="hasError('person_name') && hasError('person_name')['maxlength']">
+                            Por favor informe um nome com menos caracteres
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Telefone</mat-label>
+                        <example-tel-input placeholder="88-98809-4979" formControlName="person_phone"></example-tel-input>
+                        <mat-hint>Digitar somente números e o DDD</mat-hint>
+                        <mat-error *ngIf="hasError('person_phone') && hasError('person_phone')['required']">
+                            Por favor informe um telefone válido
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+        <div formGroupName="address">
+            <h1>Endreço</h1>
+            <mat-grid-list cols="3" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>CEP</mat-label>
+                        <input matInput formControlName="cep" placeholder="63030170" required>
+                        <mat-hint>Digite somente números</mat-hint>
+                        <mat-error *ngIf="hasError('cep') && hasError('cep')['required']">
+                            Por favor informe um CEP
+                        </mat-error>
+                        <mat-error *ngIf="hasError('cep') && hasError('cep')['minlength']">
+                            Por favor informe um CEP válido!
+                        </mat-error>
+                        <mat-error *ngIf="hasError('cep') && hasError('cep')['maxlength']">
+                            Por favor informe um CEP válido!
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Número</mat-label>
+                        <input matInput formControlName="number" placeholder="13" required>
+                        <mat-error *ngIf="hasError('number') && hasError('number')['required']">
+                            Por favor informe o número da residência
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Complemento</mat-label>
+                        <input matInput formControlName="complement" placeholder="A">
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <mat-form-field appearance="outline">
+                <mat-label>Rua</mat-label>
+                <input matInput formControlName="street" placeholder="Ernestina Sobreira" required>
+                <mat-error *ngIf="hasError('street') && hasError('street')['required']">
+                    Por favor informe a rua!
+                </mat-error>
+                <mat-error *ngIf="hasError('street') && hasError('street')['minlength']">
+                    Quantidade de caracteres insufiente!
+                </mat-error>
+                <mat-error *ngIf="hasError('street') && hasError('street')['maxlength']">
+                    Quantidade de caracteres ultrapassada!
+                </mat-error>
+            </mat-form-field>
+            <mat-grid-list cols="2" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Bairro</mat-label>
+                        <input matInput formControlName="neighborhood" placeholder="Pirajá" required>
+                        <mat-error *ngIf="hasError('neighborhood') && hasError('neighborhood')['required']">
+                            Por favor informe o bairro!
+                        </mat-error>
+                        <mat-error *ngIf="hasError('neighborhood') && hasError('neighborhood')['minlength']">
+                            Quantidade de caracteres insufiente!
+                        </mat-error>
+                        <mat-error *ngIf="hasError('neighborhood') && hasError('neighborhood')['maxlength']">
+                            Quantidade de caracteres ultrapassada!
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Estado</mat-label>
+                        <input matInput formControlName="state" placeholder="CE" required>
+                        <mat-hint>Digitar somente a sigla do estado</mat-hint>
+                        <mat-error *ngIf="hasError('state') && hasError('state')['required']">
+                            Por favor informe o bairro!
+                        </mat-error>
+                        <mat-error *ngIf="hasError('state') && hasError('state')['minlength']">
+                            Quantidade de caracteres insufiente!
+                        </mat-error>
+                        <mat-error *ngIf="hasError('state') && hasError('state')['maxlength']">
+                            Quantidade de caracteres ultrapassada!
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+        <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+    </form>
+</div>

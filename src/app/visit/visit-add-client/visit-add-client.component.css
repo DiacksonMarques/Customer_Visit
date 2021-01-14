@@ -1,0 +1,108 @@
+table {
+    width: 100%;
+}
+
+mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+mat-cell:last-of-type,
+mat-header-cell:last-of-type,
+mat-footer-cell:last-of-type {
+    padding: 0;
+}
+
+mat-cell:first-of-type,
+mat-header-cell:first-of-type,
+mat-footer-cell:first-of-type {
+    padding: 0;
+}
+
+mat-cell,
+mat-header-cell,
+mat-footer-cell {
+    text-align: center;
+    justify-content: center;
+}
+
+.margin {
+    background-color: #ffffff;
+    max-width: 95%;
+    margin: -10% auto 0 auto;
+    border-radius: 1rem;
+    padding: 3%;
+}
+
+.update {
+    color: khaki;
+}
+
+.marginbutton {
+    margin-right: 4%;
+}
+
+@media screen and (min-width: 2051px) {
+    .margin {
+        margin: -5% auto 0 auto;
+    }
+}
+
+@media screen and (min-width: 2206px) {
+    .margin {
+        margin: -3% auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .margin {
+        background-color: #ffffff;
+        max-width: 700px;
+        margin: -5% auto 0 auto;
+        border-radius: 1rem;
+        padding: 1%;
+    }
+    .mat-table {
+        border: 0;
+        vertical-align: middle
+    }
+    .mat-table caption {
+        font-size: 1em;
+    }
+    .mat-table .mat-row {
+        border-bottom: 5px solid #ddd;
+        display: block;
+    }
+    .mat-table .mat-cell {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 1em;
+        text-align: right;
+        font-weight: bold;
+        height: 30px;
+        margin: 0 3% 4% 3%;
+    }
+    .mat-table .mat-cell:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: .85em;
+    }
+    .mat-table .mat-cell:last-child {
+        border-bottom: 0;
+    }
+    .mat-table .mat-cell:first-child {
+        margin-top: 4%;
+    }
+    .mat-cell:last-of-type,
+    mat-header-cell:last-of-type,
+    mat-footer-cell:last-of-type {
+        padding: 0;
+    }
+    mat-cell:first-of-type,
+    mat-header-cell:first-of-type,
+    mat-footer-cell:first-of-type {
+        padding: 0;
+    }
+}

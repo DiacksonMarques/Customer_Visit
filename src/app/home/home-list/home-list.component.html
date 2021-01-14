@@ -1,0 +1,57 @@
+<div class="margin">
+    <div class="header">
+        <h1>Lista de Visitas</h1>
+        <div>
+            <button mat-raised-button color="primary" (click)="onAddClient()">Novo Cliente</button>
+            <button mat-raised-button color="primary" (click)="onAddVisit()">Nova Visita</button>
+        </div>
+    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+    <div class="example-container mat-elevation-z8" matSort>
+        <table mat-table [dataSource]="dataSource">
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> Código </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="Código"> {{row.id}} </mat-cell>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="id_client">
+                <mat-header-cell *matHeaderCellDef> Cliente </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="cliente"> {{row.name_client}} </mat-cell>
+            </ng-container>
+            <!-- Weight Column -->
+            <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef> Data </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="data"> {{row.date}} </mat-cell>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="hour">
+                <mat-header-cell *matHeaderCellDef> Hora </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="hora"> {{row.hour}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="status"> {{row.visit_status}} </mat-cell>
+            </ng-container>
+            <!-- Get Details -->
+            <ng-container matColumnDef="details">
+                <mat-header-cell *matHeaderCellDef> Ver mais </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="ver mais">
+                    <button mat-raised-button color="primary" (click)="onUnit(row.id)">
+                        Ver mais
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">Nenhum dado corresponde ao filtro "{{input.value}}"</td>
+            </tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[15, 30, 50]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

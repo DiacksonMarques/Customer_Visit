@@ -1,0 +1,80 @@
+{
+  "client": [
+    {
+      "id": 3,
+      "name": "Marcos Ricardo",
+      "phone": {
+        "area": "88",
+        "exchange": "88888",
+        "subscriber": "7888"
+      },
+      "type_client": "Físico",
+      "preferential": "Não",
+      "person": {
+        "person_name": "Diackson Marques",
+        "person_phone": {
+          "area": "88",
+          "exchange": "88889",
+          "subscriber": "7979"
+        }
+      },
+      "address": {
+        "cep": "63030110",
+        "number": "12",
+        "complement": null,
+        "street": "Tetest rua ",
+        "neighborhood": "Crato",
+        "state": "Ce"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Diana Marques Cidrão",
+      "phone": {
+        "area": "88",
+        "exchange": "98833",
+        "subscriber": "7961"
+      },
+      "type_client": "Físico",
+      "preferential": "Não",
+      "person": {
+        "person_name": "Franciso Jacson Alves Cidrão",
+        "person_phone": {
+          "area": "88",
+          "exchange": "98809",
+          "subscriber": "4970"
+        }
+      },
+      "address": {
+        "cep": "63030118",
+        "number": "785",
+        "complement": null,
+        "street": "Ernestina Sobreira",
+        "neighborhood": "Limoeiro",
+        "state": "CE"
+      }
+    }
+  ],
+  "visit": [
+    {
+      "id": 2,
+      "id_client": 3,
+      "name_client": "Marcos Ricardo",
+      "date": "25/10/2021",
+      "hour": "14:20",
+      "reason_client": "Cliente quer ver filha",
+      "visit_status": "Cadastrado",
+      "visit_result": "Cliente quer viu a filha"
+    },
+    {
+      "id": 3,
+      "id_client": 3,
+      "name_client": "Marcos Ricardo",
+      "date": "2021-01-14T03:00:00.000Z",
+      "hour": "08:12",
+      "reason_client": "nkl;n,.;",
+      "visit_status": "Cadastrada",
+      "visit_result": "m,..;m,.;"
+    }
+  ]
+}
